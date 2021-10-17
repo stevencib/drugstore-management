@@ -68,7 +68,7 @@
 		<!-- User Menu -->
 		<li class="nav-item dropdown has-arrow">
 			<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
-				<span class="user-img"><img class="rounded-circle" src="@if(!empty(auth()->user()->avatar)){{asset('storage/users/'.auth()->user()->avatar)}}@endif" width="31" alt="avatar"></span>
+				<span class="user-img"><img class="rounded-circle" src="@if(!empty(auth()->user()->avatar)){{asset('storage/users/'.auth()->user()->avatar)}} @else {{asset('assets/img/user.png')}} @endif" width="31" alt="avatar"></span>
 			</a>
 			<div class="dropdown-menu">
 				<div class="user-header">
