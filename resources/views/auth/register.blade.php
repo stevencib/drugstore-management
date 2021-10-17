@@ -20,7 +20,7 @@
 		<input class="form-control" name="password_confirmation" type="password" placeholder="Confirm Password">
 	</div>
 	<div class="form-group mb-0">
-		<button class="btn btn-primary btn-block" type="submit">Register</button>
+		<button class="btn btn-success btn-login btn-block" type="submit">Register</button>
 	</div>
 </form>
 <!-- /Form -->

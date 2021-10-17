@@ -8,7 +8,7 @@
 		<meta name="csrf-token" content="{{ csrf_token() }}">
 
 		<!-- Favicon -->
-		<link rel="shortcut icon" type="image/x-icon" href="@if(!empty(AppSettings::get('logo'))) {{asset('storage/'.AppSettings::get('favicon'))}} @else{{asset('assets/img/favicon.png')}} @endif">
+		<link rel="shortcut icon" type="image/x-icon" href="@if(!empty(AppSettings::get('logo'))) {{asset('storage/'.AppSettings::get('favicon'))}} @else{{asset('assets/img/logo/logo11.jpeg')}} @endif">
 
 		<!-- Bootstrap CSS -->
 		<link rel="stylesheet" href="{{asset('assets/css/bootstrap.min.css')}}">

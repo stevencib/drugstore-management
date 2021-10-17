@@ -16,6 +16,7 @@
 
 		<!-- Main CSS -->
         <link rel="stylesheet" href="assets/css/style.css">
+		<link rel="stylesheet" href="assets/css/customer-style.css">
 
 		@yield('page-css')
 
@@ -30,9 +31,9 @@
         <div class="main-wrapper login-body">
             <div class="login-wrapper">
             	<div class="container">
-                	<div class="loginbox">
+                	<div class="loginbox shadow-lg">
                     	<div class="login-left">
-							<img class="img-fluid" src="@if(!empty(AppSettings::get('logo'))) {{asset('storage/'.AppSettings::get('logo'))}} @else{{asset('assets/img/logo.png')}} @endif" alt="Logo">
+							<img class="img-fluid shadow-lg rounded" src="@if(!empty(AppSettings::get('logo'))) {{asset('storage/'.AppSettings::get('logo'))}} @else{{asset('assets/img/logo/logo.png')}} @endif" alt="Logo">
                         </div>
                         <div class="login-right">
 							<div class="login-right-wrap">

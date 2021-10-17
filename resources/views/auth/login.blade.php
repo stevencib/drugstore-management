@@ -1,8 +1,8 @@
 @extends('layouts.auth')
 
 @section('content')
-<h1>Login</h1>
-<p class="account-subtitle">Access to our dashboard</p>
+<h1>{{__("Login")}}</h1>
+<p class="account-subtitle">{{__("Access to our dashboard")}}</p>
 @if (session('login_error'))
 <x-alerts.danger :error="session('login_error')" />
 @endif
@@ -16,7 +16,7 @@
 		<input class="form-control" name="password" type="password" placeholder="Password">
 	</div>
 	<div class="form-group">
-		<button class="btn btn-primary btn-block" type="submit">Login</button>
+		<button class="btn btn-success btn-login btn-block" type="submit">{{__("Log-in") }}</button>
 	</div>
 </form>
 <!-- /Form -->

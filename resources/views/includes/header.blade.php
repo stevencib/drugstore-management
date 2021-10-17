@@ -7,7 +7,7 @@
 			<img src="@if(!empty(AppSettings::get('logo'))) {{asset('storage/'.AppSettings::get('logo'))}} @else{{asset('assets/img/logo.png')}} @endif" alt="Logo">
 		</a>
 		<a href="{{route('dashboard')}}" class="logo logo-small">
-			<img src="{{asset('assets/img/logo-small.png')}}" alt="Logo" width="30" height="30">
+			<img src="{{asset('assets/img/logo/logo11.jpeg')}}" alt="Logo" width="30" height="30" class="">
 		</a>
 	</div>
 	<!-- /Logo -->
@@ -15,9 +15,6 @@
 	<a href="javascript:void(0);" id="toggle_btn">
 		<i class="fe fe-text-align-left"></i>
 	</a>
-	
-	
-	
 	<!-- Mobile Menu Toggle -->
 	<a class="mobile_btn" id="mobile_btn">
 		<i class="fa fa-bars"></i>
