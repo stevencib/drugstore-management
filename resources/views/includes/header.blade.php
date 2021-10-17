@@ -73,7 +73,7 @@
 			<div class="dropdown-menu">
 				<div class="user-header">
 					<div class="avatar avatar-sm">
-						<img src="@if(!empty(auth()->user()->avatar)){{asset('storage/users/'.auth()->user()->avatar)}}@endif" alt="User Image" class="avatar-img rounded-circle">
+						<img src="@if(!empty(auth()->user()->avatar)){{asset('storage/users/'.auth()->user()->avatar)}} @else {{ asset('assets/img/user.png')}} @endif" width="20" alt="User Image" class="avatar-img rounded-circle">
 					</div>
 					<div class="user-text">
 						<h6>{{auth()->user()->name}}</h6>
