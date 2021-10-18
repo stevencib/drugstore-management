@@ -20,7 +20,7 @@ return [
     'profile' => 'Profil',
     'backups' => 'Sauvegardes',
     'language' => 'Langue',
-    'french' => 'Françai',
+    'french' => 'Français',
     'english' => 'Anglais',
     'settings' => 'Paramètres',
 ];
