@@ -11,3 +11,14 @@
     background-color: #4bb40e;
     border: 1px solid #4bb40e;
 }
+
+.btn-primary-cust {
+    background-color: #26af48;
+    border: 1px solid #26af48;
+}
+
+.img-profil {
+    width: 1rem;
+    height: 2rem;
+    border-radius: 50%;
+}

@@ -1,0 +1,26 @@
+<?php
+
+return [
+    'main' => 'Main',
+    'categories' => 'Categories',
+    'products' => 'Products',
+    'add_product' => 'Add product',
+    'out_stock' => 'Out-Stock',
+    'expired' => 'Expired',
+    'purchase' => 'Purchase',
+    'add_purchase' => 'Add purchase',
+    'sales' => 'Sales',
+    'supplier' => 'Supplier',
+    'add_supplier' => 'Add Supplier',
+    'reports' => 'Reports',
+    'access_control' => 'Access Control',
+    'permissions' => 'Permissions',
+    'roles' => 'Roles',
+    'users' => 'Users',
+    'profile' => 'Profile',
+    'backups' => 'Backups',
+    'language' => 'Language',
+    'french' => 'French',
+    'english' => 'English',
+    'settings' => 'Settings',
+];

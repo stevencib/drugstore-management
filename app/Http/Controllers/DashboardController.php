@@ -46,4 +46,10 @@ class DashboardController extends Controller
             'latest_sales','today_sales','total_categories'
         ));
     }
+    public function lang($lang)
+    {
+        session()->put('local', $lang);
+
+        return redirect()->back();
+    }
 }

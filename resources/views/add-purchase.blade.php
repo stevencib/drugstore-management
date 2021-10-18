@@ -48,7 +48,7 @@
 							<div class="col-lg-4">
 								<div class="form-group">
 									<label>Supplier <span class="text-danger">*</span></label>
-									<select class="select2 form-select form-control" name="supplier"> 
+									<select class="form-control select2 form-select" name="supplier"> 
 										@foreach ($suppliers as $supplier)
 											<option value="{{$supplier->id}}">{{$supplier->name}}</option>
 										@endforeach

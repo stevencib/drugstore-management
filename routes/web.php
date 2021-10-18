@@ -44,6 +44,7 @@ Route::group(['middleware'=>['guest']],function (){
 });
 
 Route::group(['middleware'=>['auth']],function (){
+    Route::get('lang/{lang}', [DashboardController::class, 'lang'])->name('lang');
     Route::get('dashboard',[DashboardController::class,'index'])->name('dashboard');
     Route::get('/', [DashboardController::class,'index']);
 

@@ -22,7 +22,7 @@
 			<div class="row align-items-center">
 				<div class="col-auto profile-image">
 					<a href="#">
-						<img class="rounded-circle" alt="User Image" src="@if(!empty(auth()->user()->avatar)){{asset('storage/users/'.auth()->user()->avatar)}}@endif">
+						<img class="img-thumbnail img-profil" alt="User Image" src="@if(!empty(auth()->user()->avatar)){{asset('storage/users/'.auth()->user()->avatar)}} @else {{asset('assets/img/user.png')}} @endif">
 					</a>
 				</div>
 				<div class="col ml-md-n2 profile-user-info">

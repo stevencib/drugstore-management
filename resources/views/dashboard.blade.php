@@ -5,15 +5,13 @@
 
 @push('page-header')
 <div class="col-sm-12">
-	<h3 class="page-title">Welcome {{auth()->user()->name}}!</h3>
+	<h3 class="page-title">{{__(trans('dashboard.welcome'))}} {{auth()->user()->name}}!</h3>
 	<ul class="breadcrumb">
-		<li class="breadcrumb-item active">Dashboard</li>
+		<li class="breadcrumb-item active">{{__(trans('dashboard.dashboard')) }}</li>
 	</ul>
 </div>
 @endpush
-
 @section('content')
-	
 	<div class="row">
 		<div class="col-xl-3 col-sm-6 col-12">
 			<div class="card">
@@ -27,7 +25,7 @@
 						</div>
 					</div>
 					<div class="dash-widget-info">
-						<h6 class="text-muted">Today Sales Cash</h6>
+						<h6 class="text-muted">{{__('dashboard.today_sales_cash')}}</h6>
 						<div class="progress progress-sm">
 							<div class="progress-bar bg-primary w-50"></div>
 						</div>
@@ -48,7 +46,7 @@
 					</div>
 					<div class="dash-widget-info">
 						
-						<h6 class="text-muted">Product Categories</h6>
+						<h6 class="text-muted">{{__('dashboard.product_categories')}}</h6>
 						<div class="progress progress-sm">
 							<div class="progress-bar bg-success w-50"></div>
 						</div>
@@ -69,7 +67,7 @@
 					</div>
 					<div class="dash-widget-info">
 						
-						<h6 class="text-muted">Expired Products</h6>
+						<h6 class="text-muted">{{__('dashboard.expired_products')}}</h6>
 						<div class="progress progress-sm">
 							<div class="progress-bar bg-danger w-50"></div>
 						</div>
@@ -90,7 +88,7 @@
 					</div>
 					<div class="dash-widget-info">
 						
-						<h6 class="text-muted">System Users</h6>
+						<h6 class="text-muted">{{__('dashboard.system_users')}}</h6>
 						<div class="progress progress-sm">
 							<div class="progress-bar bg-warning w-50"></div>
 						</div>
@@ -104,17 +102,17 @@
 		
 			<div class="card card-table">
 				<div class="card-header">
-					<h4 class="card-title ">Today Sales</h4>
+					<h4 class="card-title ">{{__('dashboard.today_sales')}}</h4>
 				</div>
 				<div class="card-body">
 					<div class="table-responsive">
 						<table class="table table-hover table-center mb-0">
 							<thead>
 								<tr>
-									<th>Medicine</th>
-									<th>Quantity</th>
-									<th>Total Price</th>
-									<th>Date</th>
+									<th>{{__('dashboard.medecine')}}</th>
+									<th>{{__('dashboard.quantity')}}</th>
+									<th>{{__(trans('dashboard.total_price'))}}</th>
+									<th>{{__(trans('dashboard.date'))}}</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -145,7 +143,7 @@
 			<!-- Pie Chart -->
 			<div class="card card-chart">
 				<div class="card-header">
-					<h4 class="card-title">Resources Sum</h4>
+					<h4 class="card-title">{{__(trans('dashboard.resources_sum'))}}</h4>
 				</div>
 				<div class="card-body">
 					<div style="width:65%;">
