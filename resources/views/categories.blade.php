@@ -7,20 +7,17 @@
 
 @push('page-header')
 <div class="col-sm-7 col-auto">
-	<h3 class="page-title">Categories</h3>
+	<h3 class="page-title">{{__(trans('sidebar.categories'))}}</h3>
 	<ul class="breadcrumb">
-		<li class="breadcrumb-item"><a href="{{route('dashboard')}}">Dashboard</a></li>
-		<li class="breadcrumb-item active">Categories</li>
+		<li class="breadcrumb-item"><a href="{{route('dashboard')}}">{{__(trans('dashboard.dashboard'))}}</a></li>
+		<li class="breadcrumb-item active">{{__(trans('sidebar.categories'))}}</li>
 	</ul>
 </div>
 <div class="col-sm-5 col">
-	<a href="#add_categories" data-toggle="modal" class="btn btn-primary float-right mt-2">Add Category</a>
+	<a href="#add_categories" data-toggle="modal" class="btn btn-primary float-right mt-2">{{__(trans('category.add_category'))}}</a>
 </div>
-
 @endpush
-
 @section('content')
-
 <div class="row">
 	<div class="col-sm-12">
 		<div class="card">
@@ -29,9 +26,9 @@
 					<table id="category-table" class="datatable table table-striped table-bordered table-hover table-center mb-0">
 						<thead>
 							<tr style="boder:1px solid black;">
-								<th>Name</th>
-								<th>Created date</th>
-								<th class="text-center action-btn">Actions</th>
+								<th>{{__(trans('category.name'))}}</th>
+								<th>{{__(trans('category.created_date'))}}</th>
+								<th class="text-center action-btn">{{__(trans('category.actions'))}}</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -48,10 +45,10 @@
 								<td class="text-center">
 									<div class="actions">
 										<a data-id="{{$category->id}}" data-description="{{$category->description}}" data-name="{{$category->name}}" class="btn btn-sm bg-success-light editbtn " data-toggle="modal" href="javascript:void(0)">
-											<i class="fe fe-pencil"></i> Edit
+											<i class="fe fe-pencil"></i>{{__(trans('category.edit'))}}
 										</a>
 										<a data-id="{{$category->id}}" data-toggle="modal" href="javascript:void(0)" class="btn btn-sm bg-danger-light deletebtn">
-											<i class="fe fe-trash"></i> Delete
+											<i class="fe fe-trash"></i>{{ __(trans('category.delete'))}}
 										</a>
 									</div>
 								</td>
@@ -70,7 +67,7 @@
 	<div class="modal-dialog modal-dialog-centered" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h5 class="modal-title">Add Category</h5>
+				<h5 class="modal-title">{{__(trans('category.add_category'))}}</h5>
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 					<span aria-hidden="true">&times;</span>
 				</button>
@@ -81,16 +78,16 @@
 					<div class="row form-row">
 						<div class="col-12">
 							<div class="form-group">
-								<label>Category</label>
+								<label>{{__(trans('category.category'))}}</label>
 								<input type="text" name="name" class="form-control">
 							</div>
 							<div class="form-group">
-								<label for="description">{{__('Description')}}</label>
+								<label for="description">{{__(trans('category.description'))}}</label>
 								<textarea name="description" class="form-control"></textarea>
 							</div>
 						</div>
 					</div>
-					<button type="submit" class="btn btn-primary btn-block">Save Changes</button>
+					<button type="submit" class="btn btn-primary btn-block">{{__(trans('category.save'))}}</button>
 				</form>
 			</div>
 		</div>
@@ -103,7 +100,7 @@
 	<div class="modal-dialog modal-dialog-centered" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h5 class="modal-title">Edit Category</h5>
+				<h5 class="modal-title">{{__(trans('category.edit_category'))}}</h5>
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 					<span aria-hidden="true">&times;</span>
 				</button>
@@ -116,16 +113,16 @@
 						<div class="col-12">
 							<input type="hidden" name="id" id="edit_id">
 							<div class="form-group">
-								<label>{{__("Category")}}</label>
+								<label>{{__(trans("category.category"))}}</label>
 								<input type="text" class="form-control edit_name" name="name">
 							</div>
 							<div class="form-group">
-								<label for="description">{{__('Description')}}</label>
+								<label for="description">{{__(trans('category.description'))}}</label>
 								<textarea name="description" id="description" class="form-control edit_description"></textarea>
 							</div>
 						</div>
 					</div>
-					<button type="submit" class="btn btn-primary btn-block">Save Changes</button>
+					<button type="submit" class="btn btn-primary btn-block">{{__(trans('category.save_changes'))}}</button>
 				</form>
 			</div>
 		</div>
