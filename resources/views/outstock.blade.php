@@ -7,10 +7,10 @@
 
 @push('page-header')
 <div class="col-sm-12">
-	<h3 class="page-title">Outstock</h3>
+	<h3 class="page-title">{{__(trans('product.outstock')) }}</h3>
 	<ul class="breadcrumb">
-		<li class="breadcrumb-item"><a href="{{route('products')}}">Medicine</a></li>
-		<li class="breadcrumb-item active">Outstock</li>
+		<li class="breadcrumb-item"><a href="{{route('products')}}">{{__(trans('product.medicine')) }}</a></li>
+		<li class="breadcrumb-item active">{{__(trans('product.outstock')) }}</li>
 	</ul>
 </div>
 @endpush
@@ -26,13 +26,13 @@
 					<table id="datatable-export" class=" table table-hover table-center mb-0">
 						<thead>
 							<tr>
-								<th>Brand Name</th>
-								<th>Category</th>
-								<th>Price</th>
-								<th>Quantity</th>
-								<th>Discount</th>
-								<th>Expire</th>
-								<th class="action-btn">Action</th>
+								<th>{{__(trans('product.brand_name'))}}</th>
+								<th>{{__(trans('category.category'))}}</th>
+								<th>{{__(trans('product.price'))}}</th>
+								<th>{{__(trans('product.quantity'))}}</th>
+								<th>{{__(trans('product.discount'))}}</th>
+								<th>{{__(trans('product.expire'))}}</th>
+								<th class="action-btn">{{__(trans('product.action'))}}</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -54,15 +54,16 @@
 								<td>{{$product->discount}}%</td>
 								<td>
 									<span class="btn btn-sm bg-success-light">
-										{{date_format(date_create($product->expiry_date),"d M, Y")}}</span>	</span>
+										{{date_format(date_create($product->expiry_date),"d M, Y")}}
+									</span>
 								</td>
 								<td>
 									<div class="actions">
 										<a class="btn btn-sm bg-success-light" href="{{route('edit-product',$product)}}">
-											<i class="fe fe-pencil"></i> Edit
+											<i class="fe fe-pencil"></i>{{__(trans('category.edit'))}}
 										</a>
 										<a data-id="{{$product->id}}" href="javascript:void(0);" class="btn btn-sm bg-danger-light deletebtn" data-toggle="modal">
-											<i class="fe fe-trash"></i> Delete
+											<i class="fe fe-trash"></i>{{__(trans('category.delet'))}}
 										</a>
 									</div>
 								</td>

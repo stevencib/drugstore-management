@@ -7,14 +7,14 @@
 
 @push('page-header')
 <div class="col-sm-7 col-auto">
-	<h3 class="page-title">Products</h3>
+	<h3 class="page-title">{{__(trans('product.products'))}}</h3>
 	<ul class="breadcrumb">
-		<li class="breadcrumb-item"><a href="{{route('dashboard')}}">Dashboard</a></li>
-		<li class="breadcrumb-item active">Products</li>
+		<li class="breadcrumb-item"><a href="{{route('dashboard')}}">{{__(trans('dashboard.dashboard'))}}</a></li>
+		<li class="breadcrumb-item active">{{__(trans('product.products'))}}</li>
 	</ul>
 </div>
 <div class="col-sm-5 col">
-	<a href="{{route('add-product')}}" class="btn btn-primary float-right mt-2">Add New</a>
+	<a href="{{route('add-product')}}" class="btn btn-primary float-right mt-2">{{__(trans('product.add_new'))}}</a>
 </div>
 @endpush
 
@@ -29,17 +29,16 @@
 					<table id="datatable-export" class="table table-hover table-center mb-0">
 						<thead>
 							<tr>
-								<th>Product Name</th>
-								<th>Category</th>
-								<th>Price</th>
-								<th>Quantity</th>
-								<th>Discount</th>
-								<th>Expiry Date</th>
-								<th class="action-btn">Action</th>
+								<th>{{__(trans('product.product_name'))}}</th>
+								<th>{{__(trans('category.category'))}}</th>
+								<th>{{__(trans('product.price'))}}</th>
+								<th>{{__(trans('product.quantity'))}}</th>
+								<th>{{__(trans('product.discount'))}}</th>
+								<th>{{__(trans('product.expiry_date'))}}</th>
+								<th class="action-btn">{{__(trans('product.action'))}}</th>
 							</tr>
 						</thead>
 						<tbody>
-
 							@foreach ($products as $product)
 								@if($product->purchase()->exists())
 								<tr>
@@ -64,10 +63,10 @@
 									<td>
 										<div class="actions">
 											<a class="btn btn-sm bg-success-light" href="{{route('edit-product',$product)}}">
-												<i class="fe fe-pencil"></i> Edit
+												<i class="fe fe-pencil"></i>{{__(trans('category.edit'))}}
 											</a>
 											<a data-id="{{$product->id}}" href="javascript:void(0);" class="btn btn-sm bg-danger-light deletebtn" data-toggle="modal">
-												<i class="fe fe-trash"></i> Delete
+												<i class="fe fe-trash"></i>{{__(trans('category.delete'))}}
 											</a>
 										</div>
 									</td>

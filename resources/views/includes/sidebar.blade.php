@@ -89,8 +89,8 @@
 				<li class="submenu">
 					<a href="#"><i class="fas fa-globe"></i><span>{{__(trans('sidebar.language'))}}</span> <span class="menu-arrow"></span></a>
 					<ul style="display: none;">
-						<li><a class="{{ route_is('purchases') ? 'active' : '' }}" href="{{route('lang', ['lang' => 'fr'])}}"><img src="{{asset('assets/img/icons/fr.png')}}" class="mr-1"/>{{__(trans('sidebar.french'))}}</a></li>
-						<li><a class="{{ route_is('add-purchase') ? 'active' : '' }}" href="{{route('lang', ['lang' => 'en'])}}"><img src="{{asset('assets/img/icons/gb.png')}}" class="mr-1"/>{{__(trans('sidebar.english'))}}</a></li>
+						<li><a class="{{ (session()->get('lang') == 'fr') ? 'active' : '' }}" href="{{route('lang', ['lang' => 'fr'])}}"><img src="{{asset('assets/img/icons/fr.png')}}" class="mr-1"/>{{__(trans('sidebar.french'))}}</a></li>
+						<li><a class="{{ (session()->get('lang') == 'en') ? 'active' : '' }}" href="{{route('lang', ['lang' => 'en'])}}"><img src="{{asset('assets/img/icons/gb.png')}}" class="mr-1"/>{{__(trans('sidebar.english'))}}</a></li>
 					</ul>
 				</li>
 				@can('view-settings')

@@ -7,7 +7,7 @@
 			<img src="@if(!empty(AppSettings::get('logo'))) {{asset('storage/'.AppSettings::get('logo'))}} @else{{asset('assets/img/logo.png')}} @endif" alt="Logo">
 		</a>
 		<a href="{{route('dashboard')}}" class="logo logo-small">
-			<img src="{{asset('assets/img/logo/logo11.jpeg')}}" alt="Logo" width="30" height="30" class="">
+			<img src="{{asset('assets/img/logo-pharma-1.png')}}" alt="Logo" width="30" height="30" class="">
 		</a>
 	</div>
 	<!-- /Logo -->

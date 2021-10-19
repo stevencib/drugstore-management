@@ -9,21 +9,18 @@
 
 @push('page-header')
 <div class="col-sm-12">
-	<h3 class="page-title">Add Purchase</h3>
+	<h3 class="page-title">{{__(trans('purchases.add_purchase'))}}</h3>
 	<ul class="breadcrumb">
-		<li class="breadcrumb-item"><a href="{{route('dashboard')}}">Dashboard</a></li>
-		<li class="breadcrumb-item active">Add Purchase</li>
+		<li class="breadcrumb-item"><a href="{{route('dashboard')}}">{{__(trans('dashboard.dashboard'))}}</a></li>
+		<li class="breadcrumb-item active">{{__(trans('purchases.add_purchase'))}}</li>
 	</ul>
 </div>
 @endpush
-
-
 @section('content')
 <div class="row">
 	<div class="col-sm-12">
 		<div class="card">
 			<div class="card-body custom-edit-service">
-				
 				<!-- Add Medicine -->
 				<form method="post" enctype="multipart/form-data" autocomplete="off" action="{{route('add-purchase')}}">
 					@csrf
@@ -31,13 +28,13 @@
 						<div class="row">
 							<div class="col-lg-4">
 								<div class="form-group">
-									<label>Medicine Name<span class="text-danger">*</span></label>
+									<label>{{__(trans('purchases.medicine_name'))}}<span class="text-danger">*</span></label>
 									<input class="form-control" type="text" name="name" >
 								</div>
 							</div>
 							<div class="col-lg-4">
 								<div class="form-group">
-									<label>Category <span class="text-danger">*</span></label>
+									<label>{{__(trans('category.category'))}}<span class="text-danger">*</span></label>
 									<select class="select2 form-select form-control" name="category"> 
 										@foreach ($categories as $category)
 											<option value="{{$category->id}}">{{$category->name}}</option>
@@ -47,7 +44,7 @@
 							</div>
 							<div class="col-lg-4">
 								<div class="form-group">
-									<label>Supplier <span class="text-danger">*</span></label>
+									<label>{{__(trans('purchases.supplier'))}}<span class="text-danger">*</span></label>
 									<select class="form-control select2 form-select" name="supplier"> 
 										@foreach ($suppliers as $supplier)
 											<option value="{{$supplier->id}}">{{$supplier->name}}</option>
@@ -62,13 +59,13 @@
 						<div class="row">
 							<div class="col-lg-6">
 								<div class="form-group">
-									<label>Cost Price<span class="text-danger">*</span></label>
+									<label>{{__(trans('purchases.cost_price'))}}<span class="text-danger">*</span></label>
 									<input class="form-control" type="text" name="price">
 								</div>
 							</div>
 							<div class="col-lg-6">
 								<div class="form-group">
-									<label>Quantity<span class="text-danger">*</span></label>
+									<label>{{__(trans('purchases.quantity'))}}<span class="text-danger">*</span></label>
 									<input class="form-control" type="text" name="quantity">
 								</div>
 							</div>
@@ -79,13 +76,13 @@
 						<div class="row">
 							<div class="col-lg-6">
 								<div class="form-group">
-									<label>Expire Date<span class="text-danger">*</span></label>
+									<label>{{__(trans('purchases.expire_date'))}}<span class="text-danger">*</span></label>
 									<input class="form-control" type="date" name="expiry_date">
 								</div>
 							</div>
 							<div class="col-lg-6">
 								<div class="form-group">
-									<label>Medicine Image</label>
+									<label>{{__(trans('purchases.medicine_image'))}}</label>
 									<input type="file" name="image" class="form-control">
 								</div>
 							</div>
@@ -94,7 +91,7 @@
 					
 					
 					<div class="submit-section">
-						<button class="btn btn-primary submit-btn" type="submit" >Submit</button>
+						<button class="btn btn-primary submit-btn" type="submit" >{{__(trans('purchases.submit'))}}</button>
 					</div>
 				</form>
 				<!-- /Add Medicine -->

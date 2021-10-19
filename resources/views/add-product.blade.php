@@ -7,22 +7,18 @@
 
 @push('page-header')
 <div class="col-sm-12">
-	<h3 class="page-title">Add Product</h3>
+	<h3 class="page-title">{{__(trans('product.add_product'))}}</h3>
 	<ul class="breadcrumb">
-		<li class="breadcrumb-item"><a href="{{route('dashboard')}}">Dashboard</a></li>
-		<li class="breadcrumb-item active">Add Product</li>
+		<li class="breadcrumb-item"><a href="{{route('dashboard')}}">{{__(trans('dashboard.dashboard'))}}</a></li>
+		<li class="breadcrumb-item active">{{__(trans('product.add_product'))}}</li>
 	</ul>
 </div>
 @endpush
-
-
 @section('content')
 <div class="row">
 	<div class="col-sm-12">
 		<div class="card">
 			<div class="card-body custom-edit-service">
-				
-		
 			<!-- Add Medicine -->
 			<form method="post" enctype="multipart/form-data" id="update_service" action="{{route('add-product')}}">
 				@csrf
@@ -31,7 +27,7 @@
 						
 						<div class="col-lg-12">
 							<div class="form-group">
-								<label>Product <span class="text-danger">*</span></label>
+								<label>{{__(trans('product.product'))}}<span class="text-danger">*</span></label>
 								<select class="select2 form-select form-control" name="product"> 
 									@foreach ($products as $product)
 										<option value="{{$product->id}}">{{$product->name}}</option>
@@ -46,28 +42,25 @@
 					<div class="row">
 						<div class="col-lg-6">
 							<div class="form-group">
-								<label>Selling Price<span class="text-danger">*</span></label>
+								<label>{{__(trans('product.selling_price'))}}<span class="text-danger">*</span></label>
 								<input class="form-control" type="text" name="price" value="{{old('price')}}">
 							</div>
 						</div>
 
 						<div class="col-lg-6">
 							<div class="form-group">
-								<label>Discount (%)<span class="text-danger">*</span></label>
+								<label>{{__(trans('product.discount'))}} (%)<span class="text-danger">*</span></label>
 								<input class="form-control" type="text" name="discount" value="0">
 							</div>
 						</div>
 						
 					</div>
 				</div>
-
-								
-				
 				<div class="service-fields mb-3">
 					<div class="row">
 						<div class="col-lg-12">
 							<div class="form-group">
-								<label>Descriptions <span class="text-danger">*</span></label>
+								<label>{{__(trans('product.description'))}} <span class="text-danger">*</span></label>
 								<textarea class="form-control service-desc" name="description"></textarea>
 							</div>
 						</div>
