@@ -29,7 +29,7 @@
 					<table id="datatable-export" class="table table-hover table-center mb-0">
 						<thead>
 							<tr>
-								<th>{{__(trans('purchases.medecine_name'))}}</th>
+								<th>{{__(trans('purchases.medicine_name'))}}</th>
 								<th>{{__(trans('purchases.medicine_category'))}}</th>
 								<th>{{__(trans('purchases.purchase_price'))}}</th>
 								<th>{{__(trans('purchases.quantity'))}}</th>

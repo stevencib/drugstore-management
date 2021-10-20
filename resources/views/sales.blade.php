@@ -7,15 +7,15 @@
 
 @push('page-header')
 <div class="col-sm-7 col-auto">
-	<h3 class="page-title">Sales</h3>
+	<h3 class="page-title">{{__(trans('sale.sales'))}}</h3>
 	<ul class="breadcrumb">
-		<li class="breadcrumb-item"><a href="{{route('dashboard')}}">Dashboard</a></li>
-		<li class="breadcrumb-item active">Sales</li>
+		<li class="breadcrumb-item"><a href="{{route('dashboard')}}">{{__(trans('dashboard.dashboard'))}}</a></li>
+		<li class="breadcrumb-item active">{{__(trans('sale.sales'))}}</li>
 	</ul>
 </div>
 @can('create-sales')
 <div class="col-sm-5 col">
-	<a href="#add_sales" data-toggle="modal" class="btn btn-primary float-right mt-2">Add Sales</a>
+	<a href="#add_sales" data-toggle="modal" class="btn btn-primary float-right mt-2">{{__(trans('sale.add_sales'))}}</a>
 </div>
 @endcan
 @endpush
@@ -31,11 +31,11 @@
 					<table id="datatable-export" class="table table-hover table-center mb-0">
 						<thead>
 							<tr>
-								<th>Medicine Name</th>
-								<th>Quantity</th>
-								<th>Total Price</th>
-								<th>Date</th>
-								<th class="action-btn">Action</th>
+								<th>{{__(trans('sale.medicine_name'))}}</th>
+								<th>{{__(trans('sale.quantity'))}}</th>
+								<th>{{__(trans('sale.total_price'))}}</th>
+								<th>{{__(trans('sale.date'))}}</th>
+								<th class="action-btn">{{__(trans('sale.action'))}}</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -50,12 +50,12 @@
 											<div class="actions">
 												@can('update-sales')
 												<a data-id="{{$sale->id}}" data-product="{{$sale->product_id}}" data-quantity="{{$sale->quantity}}" class="btn btn-sm bg-success-light editbtn" href="javascript:void(0);">
-													<i class="fe fe-pencil"></i> Edit
+													<i class="fe fe-pencil"></i>{{__(trans('category.edit'))}}
 												</a>
 												@endcan
 												@can('destroy-sales')
 												<a data-id="{{$sale->id}}" href="javascript:void(0);" class="btn btn-sm bg-danger-light deletebtn" data-toggle="modal">
-													<i class="fe fe-trash"></i> Delete
+													<i class="fe fe-trash"></i>{{__(trans('category.delete'))}}
 												</a>
 												@endcan
 											</div>
@@ -80,7 +80,7 @@
 	<div class="modal-dialog modal-dialog-centered" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h5 class="modal-title">Sell Product</h5>
+				<h5 class="modal-title">{{__(trans('sale.sell_product'))}}</h5>
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 					<span aria-hidden="true">&times;</span>
 				</button>
@@ -91,7 +91,7 @@
 					<div class="row form-row">
 						<div class="col-12">
 							<div class="form-group">
-								<label>Product <span class="text-danger">*</span></label>
+								<label>{{__(trans('product.product'))}} <span class="text-danger">*</span></label>
 								<select class="select2 form-select form-control" name="product"> 
 									@foreach ($products as $product)
 										@if (!empty($product->purchase))
@@ -106,12 +106,12 @@
 						<input type="hidden" name="">
 						<div class="col-12">
 							<div class="form-group">
-								<label>Quantity</label>
+								<label>{{__(trans('sale.quantity'))}}</label>
 								<input type="number" value="1" class="form-control" name="quantity">
 							</div>
 						</div>
 					</div>
-					<button type="submit" class="btn btn-primary btn-block">Save Changes</button>
+					<button type="submit" class="btn btn-primary btn-block">{{__(trans('sale.save'))}}</button>
 				</form>
 			</div>
 		</div>
@@ -124,7 +124,7 @@
 	<div class="modal-dialog modal-dialog-centered" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h5 class="modal-title">Edit Sold Product</h5>
+				<h5 class="modal-title">{{__(trans('sale.edit_sold_product'))}}</h5>
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 					<span aria-hidden="true">&times;</span>
 				</button>
@@ -137,7 +137,7 @@
 						<div class="col-12">
 							<input type="hidden" id="edit_id" name="id">
 							<div class="form-group">
-								<label>Product <span class="text-danger">*</span></label>
+								<label>{{__(trans('product.product'))}}<span class="text-danger">*</span></label>
 								<select class="select2 form-select form-control edit_product" name="product"> 
 									@foreach ($products as $product)
 										@if (!empty($product->purchase))
@@ -152,12 +152,12 @@
 						<input type="hidden" name="">
 						<div class="col-12">
 							<div class="form-group">
-								<label>Quantity</label>
+								<label>{{__(trans('sale.quantity'))}}</label>
 								<input type="number" class="form-control edit_quantity" name="quantity">
 							</div>
 						</div>
 					</div>
-					<button type="submit" class="btn btn-primary btn-block">Save Changes</button>
+					<button type="submit" class="btn btn-primary btn-block">{{__(trans('sale.apply'))}}</button>
 				</form>
 			</div>
 		</div>
