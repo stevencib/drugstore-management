@@ -6,4 +6,6 @@ return [
     'forgot_password' => 'Forgot Password ?',
     'dont_have_an_account' => 'Don’t have an account ?',
     'register' => ' Register',
+    'email' => 'Email',
+    'password' => 'Password',
 ];

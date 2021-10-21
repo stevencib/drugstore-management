@@ -10,7 +10,7 @@ return [
     'purchase' => 'Purchase',
     'add_purchase' => 'Add purchase',
     'sales' => 'Sales',
-    'supplier' => 'Supplier',
+    'suppliers' => 'Suppliers',
     'add_supplier' => 'Add Supplier',
     'reports' => 'Reports',
     'access_control' => 'Access Control',

@@ -44,9 +44,9 @@
 				@endcan
 				@can('view-supplier')
 				<li class="submenu">
-					<a href="#"><i class="fe fe-user"></i> <span> {{__(trans('sidebar.supplier'))}}</span> <span class="menu-arrow"></span></a>
+					<a href="#"><i class="fe fe-user"></i> <span> {{__(trans('sidebar.suppliers'))}}</span> <span class="menu-arrow"></span></a>
 					<ul style="display: none;">
-						<li><a class="{{ route_is('suppliers') ? 'active' : '' }}" href="{{route('suppliers')}}">{{__(trans('sidebar.supplier'))}}</a></li>
+						<li><a class="{{ route_is('suppliers') ? 'active' : '' }}" href="{{route('suppliers')}}">{{__(trans('sidebar.suppliers'))}}</a></li>
 						@can('create-supplier')<li><a class="{{ route_is('add-supplier') ? 'active' : '' }}" href="{{route('add-supplier')}}">{{__(trans('sidebar.add_supplier'))}}</a></li>@endcan
 					</ul>
 				</li>

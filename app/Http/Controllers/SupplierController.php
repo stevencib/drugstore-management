@@ -94,12 +94,10 @@ class SupplierController extends Controller
     {
         $this->validate($request,[
             'name'=>'required',
-            'product'=>'required',
             'email'=>'email|string',
             'phone'=>'max:13',
             'company'=>'max:200|required',
             'address'=>'required|max:200',
-            'description' =>'max:200',
         ]);
 
         $supplier->update($request->all());

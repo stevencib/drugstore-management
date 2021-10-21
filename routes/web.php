@@ -30,6 +30,7 @@ use App\Http\Controllers\Auth\ForgotPasswordController;
 |
 */
 
+Route::get('lang/{lang}', [DashboardController::class, 'lang'])->name('lang');
 
 Route::group(['middleware'=>['guest']],function (){
     Route::get('login',[LoginController::class,'index'])->name('login');
@@ -37,14 +38,11 @@ Route::group(['middleware'=>['guest']],function (){
     Route::get('register',[RegisterController::class,'index'])->name('register');
     Route::post('register',[RegisterController::class,'store']); 
 
-   
-
     Route::get('forgot-password',[ForgotPasswordController::class,'index'])->name('forgot-password');
     Route::post('forgot-password',[ForgotPasswordController::class,'reset']);
 });
 
 Route::group(['middleware'=>['auth']],function (){
-    Route::get('lang/{lang}', [DashboardController::class, 'lang'])->name('lang');
     Route::get('dashboard',[DashboardController::class,'index'])->name('dashboard');
     Route::get('/', [DashboardController::class,'index']);
 
@@ -69,7 +67,7 @@ Route::group(['middleware'=>['auth']],function (){
     Route::post('add-supplier',[SupplierController::class,'store']);
     Route::get('suppliers/{supplier}',[SupplierController::class,'show'])->name('edit-supplier');
     Route::delete('suppliers',[SupplierController::class,'destroy']);
-    Route::put('suppliers/{supplier}}',[SupplierController::class,'update'])->name('edit-supplier');
+    Route::put('suppliers/{supplier}',[SupplierController::class,'update'])->name('edit-supplier');
 
     Route::get('purchases',[PurchaseController::class,'index'])->name('purchases');
     Route::get('add-purchase',[PurchaseController::class,'create'])->name('add-purchase');

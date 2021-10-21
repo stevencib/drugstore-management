@@ -6,4 +6,6 @@ return [
     'forgot_password' => 'Mot de passe oublié ?',
     'dont_have_an_account' => 'Vous n\'avez pas de compte ?',
     'register' => ' S\'inscrire',
+    'email' => 'E-mail',
+    'password' => 'Mot de passe',
 ];

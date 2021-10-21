@@ -7,14 +7,14 @@
 
 @push('page-header')
 <div class="col-sm-7 col-auto">
-	<h3 class="page-title">Supplier</h3>
+	<h3 class="page-title">{{__(trans('sidebar.suppliers'))}}</h3>
 	<ul class="breadcrumb">
-		<li class="breadcrumb-item"><a href="{{route('dashboard')}}">Dashboard</a></li>
-		<li class="breadcrumb-item active">Supplier</li>
+		<li class="breadcrumb-item"><a href="{{route('dashboard')}}">{{__(trans('dashboard.dashboard'))}}</a></li>
+		<li class="breadcrumb-item active">{{__(trans('fournisseur.supplier'))}}</li>
 	</ul>
 </div>
 <div class="col-sm-5 col">
-	<a href="{{route('add-supplier')}}" class="btn btn-primary float-right mt-2">Add New</a>
+	<a href="{{route('add-supplier')}}" class="btn btn-primary float-right mt-2">{{__(trans('fournisseur.add_new'))}}</a>
 </div>
 @endpush
 
@@ -29,13 +29,13 @@
 					<table id="datatable-export" class="table table-hover table-center mb-0">
 						<thead>
 							<tr>
-								<th>Name</th>
-								<th>Phone</th>
-								<th>Email</th>
-								<th>Address</th>
-								<th>Company</th>
-								<th>Product</th>
-								<th class="action-btn">Action</th>
+								<th>{{__(trans('fournisseur.name'))}}</th>
+								<th>{{__(trans('fournisseur.phone'))}}</th>
+								<th>{{__(trans('fournisseur.email'))}}</th>
+								<th>{{__(trans('fournisseur.address'))}}</th>
+								<th>{{__(trans('fournisseur.company'))}}</th>
+								<th>{{__(trans('fournisseur.product'))}}</th>
+								<th class="action-btn">{{__(trans('fournisseur.action')) }}</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -49,11 +49,11 @@
 								<td>{{$supplier->product}}</td>
 								<td>
 									<div class="actions">
-										<a class="btn btn-sm bg-success-light" href="{{route('edit-supplier',$supplier)}}">
-											<i class="fe fe-pencil"></i> Edit
+										<a class="btn btn-sm bg-success-light" href="{{ route('edit-supplier', [$supplier->id]) }}">
+											<i class="fe fe-pencil"></i>{{__(trans('category.edit')) }}
 										</a>
-										<a data-id="{{$supplier->id}}" href="javascript:void(0);" class="btn btn-sm bg-danger-light deletebtn" data-toggle="modal">
-											<i class="fe fe-trash"></i> Delete
+										<a data-id="{{ $supplier->id }}" href="javascript:void(0);" class="btn btn-sm bg-danger-light deletebtn" data-toggle="modal">
+											<i class="fe fe-trash"></i>{{__(trans('category.delete')) }}
 										</a>
 									</div>
 								</td>

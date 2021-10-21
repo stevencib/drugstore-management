@@ -10,7 +10,7 @@ return [
     'purchase' => 'Achat',
     'add_purchase' => 'Ajouter un achat',
     'sales' => 'Ventes',
-    'supplier' => 'Fournisseurs',
+    'suppliers' => 'Fournisseurs',
     'add_supplier' => 'Ajouter un fournisseur',
     'reports' => 'Rapports',
     'access_control' => 'Contrôle d\'accès',

@@ -9,10 +9,10 @@
 
 @push('page-header')
 <div class="col-sm-12">
-	<h3 class="page-title">{{__("Add Supplier")}}</h3>
+	<h3 class="page-title">{{__(trans('fournisseur.add_supplier'))}}</h3>
 	<ul class="breadcrumb">
-		<li class="breadcrumb-item"><a href="{{route('dashboard')}}">{{__("Dashboard")}}</a></li>
-		<li class="breadcrumb-item active">{{__("Add Supplier")}}</li>
+		<li class="breadcrumb-item"><a href="{{route('dashboard')}}">{{__(trans('dashboard.dashboard'))}}</a></li>
+		<li class="breadcrumb-item active">{{__(trans('fournisseur.add_supplier'))}}</li>
 	</ul>
 </div>
 @endpush
@@ -29,12 +29,12 @@
 					<div class="row">
 						<div class="col-lg-6">
 							<div class="form-group">
-								<label>Name<span class="text-danger">*</span></label>
+								<label>{{__(trans('fournisseur.name'))}}<span class="text-danger">*</span></label>
 								<input class="form-control" type="text" name="name" required/>
 							</div>
 						</div>
 						<div class="col-lg-6">
-							<label>Email<span class="text-danger">*</span></label>
+							<label>{{__(trans('fournisseur.email'))}}<span class="text-danger">*</span></label>
 							<input class="form-control" type="text" name="email" id="email">
 						</div>
 					</div>
@@ -43,12 +43,12 @@
 					<div class="row">
 						<div class="col-lg-6">
 							<div class="form-group">
-								<label>Phone<span class="text-danger">*</span></label>
+								<label>{{__(trans('fournisseur.phone'))}}<span class="text-danger">*</span></label>
 								<input class="form-control" type="text" name="phone">
 							</div>
 						</div>
 						<div class="col-lg-6">
-							<label>Company<span class="text-danger">*</span></label>
+							<label>{{__(trans('fournisseur.company'))}}<span class="text-danger">*</span></label>
 							<input class="form-control" type="text" name="company">
 						</div>
 					</div>
@@ -57,12 +57,12 @@
 					<div class="row">
 						<div class="col-lg-6">
 							<div class="form-group">
-								<label>Address</label>
+								<label>{{__(trans('fournisseur.address'))}}</label>
 								<input type="text" name="address" class="form-control">
 							</div>
 						</div>
 						<div class="col-lg-6">
-							<label>Product</label>
+							<label>{{__(trans('fournisseur.product'))}}</label>
 							<input type="text" name="product" class="form-control">
 						</div>
 					</div>
@@ -70,14 +70,14 @@
 				<div class="service-fields mb-3">
 					<div class="row">
 						<div class="col-12">
-							<label>Comment</label>
+							<label>{{__(trans('fournisseur.comment'))}}</label>
 							<textarea name="description" class="form-control" cols="30" rows="10"></textarea>
 						</div>
 					</div>
 				</div>
 				
 				<div class="submit-section">
-					<button class="btn btn-primary submit-btn" type="submit" name="form_submit" value="submit">Submit</button>
+					<button class="btn btn-primary submit-btn" type="submit" name="form_submit" value="submit">{{__(trans('fournisseur.submit'))}}</button>
 				</div>
 			</form>
 			<!-- /Add Medicine -->
