@@ -7,17 +7,16 @@
 
 @push('page-header')
 <div class="col-sm-7 col-auto">
-	<h3 class="page-title">Reports</h3>
+	<h3 class="page-title">{{__(trans('sidebar.reports'))}}</h3>
 	<ul class="breadcrumb">
-		<li class="breadcrumb-item"><a href="{{route('dashboard')}}">Dashboard</a></li>
-		<li class="breadcrumb-item active">Generate Reports</li>
+		<li class="breadcrumb-item"><a href="{{route('dashboard')}}">{{__(trans('dashboard.dashboard'))}}</a></li>
+		<li class="breadcrumb-item active">{{__(trans('rapport.generate_reports'))}}</li>
 	</ul>
 </div>
 <div class="col-sm-5 col">
-	<a href="#generate_report" data-toggle="modal" class="btn btn-primary float-right mt-2">Generate Report</a>
+	<a href="#generate_report" data-toggle="modal" class="btn btn-primary float-right mt-2">{{__(trans('rapport.generate_report'))}}</a>
 </div>
 @endpush
-
 
 @section('content')
 	
@@ -35,7 +34,7 @@
 					</div>
 				</div>
 				<div class="dash-widget-info">
-					<h6 class="text-muted">Total Cash</h6>
+					<h6 class="text-muted">{{__(trans('rapport.total_cash'))}}</h6>
 					<div class="progress progress-sm">
 						<div class="progress-bar bg-primary w-50"></div>
 					</div>
@@ -56,7 +55,7 @@
 				</div>
 				<div class="dash-widget-info">
 					
-					<h6 class="text-muted">Total Sales</h6>
+					<h6 class="text-muted">{{__(trans('rapport.total_sales'))}}</h6>
 					<div class="progress progress-sm">
 						<div class="progress-bar bg-success w-50"></div>
 					</div>
@@ -75,10 +74,10 @@
 						<table id="datatable-export" class="table table-hover table-center mb-0">
 							<thead>
 								<tr>
-									<th>Medicine Name</th>
-									<th>Quantity</th>
-									<th>Total Price</th>
-									<th>Date</th>
+									<th>{{__(trans('rapport.medicine_name'))}}</th>
+									<th>{{__(trans('rapport.quantity'))}}</th>
+									<th>{{__(trans('rapport.total_price'))}}</th>
+									<th>{{__(trans('rapport.date'))}}</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -109,13 +108,13 @@
 						<table id="datatable-export" class="table table-hover table-center mb-0">
 							<thead>
 								<tr>
-									<th>Product Name</th>
-									<th>Category</th>
-									<th>Price</th>
-									<th>Quantity</th>
-									<th>Discount</th>
-									<th>Expiry Date</th>
-									<th class="action-btn">Action</th>
+									<th>{{__(trans('rapport.product_name'))}}</th>
+									<th>{{__(trans('rapport.category'))}}</th>
+									<th>{{__(trans('rapport.price'))}}</th>
+									<th>{{__(trans('rapport.quantity'))}}</th>
+									<th>{{__(trans('rapport.discount'))}}</th>
+									<th>{{__(trans('rapport.expiry_date'))}}</th>
+									<th class="action-btn">{{__(trans('rapport.action'))}}</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -144,10 +143,10 @@
 											<td>
 												<div class="actions">
 													<a class="btn btn-sm bg-success-light" href="{{route('edit-product',$product)}}">
-														<i class="fe fe-pencil"></i> Edit
+														<i class="fe fe-pencil"></i>{{__(trans('category.edit'))}}
 													</a>
 													<a data-id="{{$product->id}}" href="javascript:void(0);" class="btn btn-sm bg-danger-light deletebtn" data-toggle="modal">
-														<i class="fe fe-trash"></i> Delete
+														<i class="fe fe-trash"></i>{{__(trans('category.delete')) }}
 													</a>
 												</div>
 											</td>
@@ -171,13 +170,13 @@
 						<table id="datatable-export" class="table table-hover table-center mb-0">
 							<thead>
 								<tr>
-									<th>Medicine Name</th>
-									<th>Medicine Category</th>
-									<th>Purchase Price</th>
-									<th>Quantity</th>
-									<th>Supplier</th>
-									<th>Expire Date</th>
-									<th class="action-btn">Action</th>
+									<th>{{__(trans('rapport.medicine_name'))}}</th>
+									<th>{{__(trans('rapport.medicine_category'))}}</th>
+									<th>{{__(trans('rapport.purchase_price'))}}</th>
+									<th>{{__(trans('rapport.quantity'))}}</th>
+									<th>{{__(trans('rapport.supplier'))}}</th>
+									<th>{{__(trans('rapport.expire_date'))}}</th>
+									<th class="action-btn">{{__(trans('rapport.action'))}}</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -202,10 +201,10 @@
 										<td>
 											<div class="actions">
 												<a class="btn btn-sm bg-success-light" href="{{route('edit-purchase',$purchase)}}">
-													<i class="fe fe-pencil"></i> Edit
+													<i class="fe fe-pencil"></i> {{__(trans('category.edit'))}}
 												</a>
 												<a data-id="{{$purchase->id}}" href="javascript:void(0);" class="btn btn-sm bg-danger-light deletebtn" data-toggle="modal">
-													<i class="fe fe-trash"></i> Delete
+													<i class="fe fe-trash"></i> {{__(trans('category_delete'))}}
 												</a>
 											</div>
 										</td>
@@ -228,7 +227,7 @@
 	<div class="modal-dialog modal-dialog-centered" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h5 class="modal-title">Generate Report</h5>
+				<h5 class="modal-title">{{__(trans('rapport.generate_report'))}}</h5>
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 					<span aria-hidden="true">&times;</span>
 				</button>
@@ -241,28 +240,28 @@
 							<div class="row">
 								<div class="col-6">
 									<div class="form-group">
-										<label>From</label>
+										<label>{{__(trans('rapport.from'))}}</label>
 										<input type="date" name="from_date" class="form-control">
 									</div>
 								</div>
 								<div class="col-6">
 									<div class="form-group">
-										<label>To</label>
+										<label>{{__(trans('rapport.to'))}}</label>
 										<input type="date" name="to_date" class="form-control">
 									</div>
 								</div>
 							</div>
 							<div class="form-group">
-								<label>Resource</label>
+								<label>{{__(trans('rapport.resource'))}}</label>
 								<select class="form-control select" name="resource"> 
-									<option value="products">Products</option>
-									<option value="purchases">Purchases</option>
-									<option value="sales">Sales</option>
+									<option value="products">{{__(trans('rapport.products')) }}</option>
+									<option value="purchases">{{__(trans('rapport.purchases')) }}</option>
+									<option value="sales">{{__(trans('rapport.sales')) }}</option>
 								</select>
 							</div>
 						</div>
 					</div>
-					<button type="submit" class="btn btn-primary btn-block">Save Changes</button>
+					<button type="submit" class="btn btn-primary btn-block">{{__(trans('rapport.save_changes'))}}</button>
 				</form>
 			</div>
 		</div>

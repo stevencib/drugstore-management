@@ -7,14 +7,14 @@
 
 @push('page-header')
 <div class="col-sm-7 col-auto">
-	<h3 class="page-title">Permissions</h3>
+	<h3 class="page-title">{{__(trans('access.permissions'))}}</h3>
 	<ul class="breadcrumb">
-		<li class="breadcrumb-item"><a href="{{route('dashboard')}}">Dashboard</a></li>
-		<li class="breadcrumb-item active">Permissions</li>
+		<li class="breadcrumb-item"><a href="{{route('dashboard')}}">{{__(trans('dashboard.dashboard'))}}</a></li>
+		<li class="breadcrumb-item active">{{__(trans('access.permissions'))}}</li>
 	</ul>
 </div>
 <div class="col-sm-5 col">
-	<a href="#add_permission" data-toggle="modal" class="btn btn-primary float-right mt-2">Add Permission</a>
+	<a href="#add_permission" data-toggle="modal" class="btn btn-primary float-right mt-2">{{__(trans('access.add_permission'))}}</a>
 </div>
 
 @endpush
@@ -29,9 +29,9 @@
 					<table id="perm-table" class="datatable table table-striped table-bordered table-hover table-center mb-0">
 						<thead>
 							<tr style="boder:1px solid black;">
-								<th>Name</th>
-								<th>Created date</th>
-								<th class="text-center action-btn">Actions</th>
+								<th>{{__(trans('access.name'))}}</th>
+								<th>{{__(trans('access.created_date'))}}</th>
+								<th class="text-center action-btn">{{__(trans('access.actions'))}}</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -47,12 +47,12 @@
 									<div class="actions">
 										@can('update-permission')
 										<a data-id="{{$permission->id}}" data-permission="{{$permission->name}}" class="btn btn-sm bg-success-light editbtn" data-toggle="modal" href="javascript:void(0)">
-											<i class="fe fe-pencil"></i> Edit
+											<i class="fe fe-pencil"></i> {{__(trans('category.edit'))}}
 										</a>
 										@endcan
 										@can('destroy-permission')
 										<a data-id="{{$permission->id}}" data-toggle="modal" href="javascript:void(0)" class="btn btn-sm bg-danger-light deletebtn">
-											<i class="fe fe-trash"></i> Delete
+											<i class="fe fe-trash"></i> {{__(trans('category.delete'))}}
 										</a>
 										@endcan
 									</div>
@@ -72,7 +72,7 @@
 	<div class="modal-dialog modal-dialog-centered" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h5 class="modal-title">Add Permission</h5>
+				<h5 class="modal-title">{{__(trans('access.add_permission'))}}</h5>
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 					<span aria-hidden="true">&times;</span>
 				</button>
@@ -83,12 +83,12 @@
 					<div class="row form-row">
 						<div class="col-12">
 							<div class="form-group">
-								<label>Permission</label>
+								<label>{{__(trans('access.permission'))}}</label>
 								<input type="text" name="permission" class="form-control">
 							</div>
 						</div>
 					</div>
-					<button type="submit" class="btn btn-primary btn-block">Save Changes</button>
+					<button type="submit" class="btn btn-primary btn-block">{{__(trans('access.save_changes'))}}</button>
 				</form>
 			</div>
 		</div>
@@ -101,7 +101,7 @@
 	<div class="modal-dialog modal-dialog-centered" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h5 class="modal-title">Edit Permission</h5>
+				<h5 class="modal-title">{{__(trans('access.edit_permission'))}}</h5>
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 					<span aria-hidden="true">&times;</span>
 				</button>
@@ -114,13 +114,13 @@
 						<div class="col-12">
 							<input type="hidden" name="id" id="edit_id">
 							<div class="form-group">
-								<label>Permission</label>
+								<label>{{__(trans('access.permission'))}}</label>
 								<input type="text" class="form-control edit_permission" name="permission">
 							</div>
 						</div>
 						
 					</div>
-					<button type="submit" class="btn btn-primary btn-block">Save Changes</button>
+					<button type="submit" class="btn btn-primary btn-block">{{__(trans('access.apply'))}}</button>
 				</form>
 			</div>
 		</div>
