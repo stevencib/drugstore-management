@@ -9,5 +9,10 @@ return [
     'permission' => 'Permission',
     'save_changes' => 'Save',
     'edit_permission' => 'Edit Permission',
-    'appy' => 'Save Changes'
+    'appy' => 'Save Changes',
+
+    'add_role' => 'Add Role',
+    'role' => 'Role',
+    'select_permissions' => 'Select Permissions',
+    'edit_role' => 'Edit Role',
 ];

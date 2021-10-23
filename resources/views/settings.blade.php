@@ -8,14 +8,13 @@
 	<link rel="stylesheet" href="{{asset('assets/plugins/select2/css/select2.min.css')}}">
 @endpush
 
-
 @push('page-header')
 <div class="col-sm-12">
-	<h3 class="page-title">General Settings</h3>
+	<h3 class="page-title">{{__(trans('setting.general_settings'))}}</h3>
 	<ul class="breadcrumb">
-		<li class="breadcrumb-item"><a href="{{route('dashboard')}}">Dashboard</a></li>
-		<li class="breadcrumb-item"><a href="javascript:(0)">Settings</a></li>
-		<li class="breadcrumb-item active">General Settings</li>
+		<li class="breadcrumb-item"><a href="{{route('dashboard')}}">{{__(trans('dashboard.dashboard'))}}</a></li>
+		<li class="breadcrumb-item"><a href="javascript:(0)">{{__(trans('setting.settings'))}}</a></li>
+		<li class="breadcrumb-item active">{{__(trans('setting.general_settings'))}}</li>
 	</ul>
 </div>
 @endpush

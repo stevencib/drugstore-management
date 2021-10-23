@@ -33,3 +33,7 @@ ul.log-lang li {
     border: 1px solidt transparent;
     display: inline-block;
 }
+
+a.opt:hover {
+    background: #1b903e;
+}

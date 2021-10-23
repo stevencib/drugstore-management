@@ -7,10 +7,10 @@
 
 @push('page-header')
 <div class="col">
-	<h3 class="page-title">Profile</h3>
+	<h3 class="page-title">{{__(trans('sidebar.profile'))}}</h3>
 	<ul class="breadcrumb">
-		<li class="breadcrumb-item"><a href="{{route('dashboard')}}">Dashboard</a></li>
-		<li class="breadcrumb-item active">Profile</li>
+		<li class="breadcrumb-item"><a href="{{route('dashboard')}}">{{__(trans('dashboard.dashboard'))}}</a></li>
+		<li class="breadcrumb-item active">{{__(trans('sidebar.profile'))}}</li>
 	</ul>
 </div>
 @endpush
@@ -28,19 +28,18 @@
 				<div class="col ml-md-n2 profile-user-info">
 					<h4 class="user-name mb-0">{{auth()->user()->name}}</h4>
 					<h6 class="text-muted">{{auth()->user()->email}}</h6>
-					TimeZone: <h5>{{date_default_timezone_get()}}</h5>
-                    Current Date and Time: <h5>{{date('d M,Y h:i:s a', time())}}</h5>
+					{{__(trans('profile.timezone'))}}<h5>{{date_default_timezone_get()}}</h5>
+                    {{__(trans('profile.current_date_time'))}}<h5>{{date('d-m-Y h:i:s a', time())}}</h5>
 				</div>
-
 			</div>
 		</div>
 		<div class="profile-menu">
 			<ul class="nav nav-tabs nav-tabs-solid">
 				<li class="nav-item">
-					<a class="nav-link active" data-toggle="tab" href="#per_details_tab">About</a>
+					<a class="nav-link active" data-toggle="tab" href="#per_details_tab">{{__(trans('profile.about'))}}</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" data-toggle="tab" href="#password_tab">Password</a>
+					<a class="nav-link" data-toggle="tab" href="#password_tab">{{__(trans('profile.password'))}}</a>
 				</li>
 			</ul>
 		</div>
@@ -55,21 +54,21 @@
 						<div class="card">
 							<div class="card-body">
 								<h5 class="card-title d-flex justify-content-between">
-									<span>Personal Details</span>
-									<a class="edit-link" data-toggle="modal" href="#edit_personal_details"><i class="fa fa-edit mr-1"></i>Edit</a>
+									<span>{{__(trans('profile.personal_details'))}}</span>
+									<a class="edit-link" data-toggle="modal" href="#edit_personal_details"><i class="fa fa-edit mr-1"></i>{{__(trans('profile.edit'))}}</a>
 								</h5>
 								<div class="row">
-									<p class="col-sm-2 text-muted text-sm-right mb-0 mb-sm-3">Name</p>
+									<p class="col-sm-2 text-muted text-sm-right mb-0 mb-sm-3">{{__(trans('profile.name'))}}</p>
 									<p class="col-sm-10">{{auth()->user()->name}}</p>
 								</div>
 
 								<div class="row">
-									<p class="col-sm-2 text-muted text-sm-right mb-0 mb-sm-3">Email ID</p>
+									<p class="col-sm-2 text-muted text-sm-right mb-0 mb-sm-3">{{__(trans('profile.email_id'))}}</p>
 									<p class="col-sm-10">{{auth()->user()->email}}</p>
 								</div>
 
 								<div class="row">
-									<p class="col-sm-2 text-muted text-sm-right mv-0 mb-sm-3">User Role</p>
+									<p class="col-sm-2 text-muted text-sm-right mv-0 mb-sm-3">{{__(trans('profile.user_role'))}}</p>
 									<p class="col-sm-10">
 										@foreach (auth()->user()->getRoleNames() as $role)
 										{{$role}}
@@ -85,7 +84,7 @@
 							<div class="modal-dialog modal-dialog-centered" role="document">
 								<div class="modal-content">
 									<div class="modal-header">
-										<h5 class="modal-title">Personal Details</h5>
+										<h5 class="modal-title">{{__(trans('profile.personal_details'))}}</h5>
 										<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 											<span aria-hidden="true">&times;</span>
 										</button>
@@ -96,20 +95,20 @@
 											<div class="row form-row">
 												<div class="col-12">
 													<div class="form-group">
-														<label>Full Name</label>
-														<input class="form-control" name="name" type="text" value="{{auth()->user()->name}}" placeholder="Full Name">
+														<label>{{__(trans('user.full_name'))}}</label>
+														<input class="form-control" name="name" type="text" value="{{auth()->user()->name}}" placeholder="{{__(trans('user.full_name'))}}">
 													</div>
 												</div>
 												<div class="col-12">
 													<div class="form-group">
-														<label>email</label>
+														<label>{{__(trans('user.email'))}}</label>
 														<input class="form-control" name="email" type="text" value="{{auth()->user()->email}}" placeholder="Email">
 													</div>
 												</div>
 												@can('update-role')
 												<div class="col-12">
 													<div class="form-group">
-														<label>Role</label>
+														<label>{{__(trans('user.role'))}}</label>
 														<select class="form-control select edit_role" name="role">
 															@foreach ($roles as $role)
 																<option value="{{$role->name}}">{{$role->name}}</option>
@@ -120,53 +119,48 @@
 												@endcan
 												<div class="col-12">
 													<div class="form-group">
-														<label>User Avatar</label>
+														<label>{{__(trans('user.user_picture'))}}</label>
 														<input type="file" value="{{auth()->user()->avatar}}" class="form-control" name="avatar">
 													</div>
 												</div>
 
 											</div>
-											<button type="submit" class="btn btn-primary btn-block">Save Changes</button>
+											<button type="submit" class="btn btn-primary btn-block">{{__(trans('user.save_changes'))}}</button>
 										</form>
 									</div>
 								</div>
 							</div>
 						</div>
 						<!-- /Edit Details Modal -->
-
 					</div>
-
-
 				</div>
 				<!-- /Personal Details -->
-
 			</div>
 			<!-- /Personal Details Tab -->
 
 			<!-- Change Password Tab -->
 			<div id="password_tab" class="tab-pane fade">
-
 				<div class="card">
 					<div class="card-body">
-						<h5 class="card-title">Change Password</h5>
+						<h5 class="card-title">{{__(trans('profile.change_password'))}}</h5>
 						<div class="row">
 							<div class="col-md-10 col-lg-6">
 								<form method="POST" action="{{route('update-password')}}">
 									@csrf
 									@method("PUT")
 									<div class="form-group">
-										<label>Old Password</label>
+										<label>{{__(trans('profile.current_password'))}}</label>
 										<input type="password" name="old_password" class="form-control">
 									</div>
 									<div class="form-group">
-										<label>New Password</label>
+										<label>{{__(trans('profile.new_password'))}}</label>
 										<input type="password" name="password" class="form-control">
 									</div>
 									<div class="form-group">
-										<label>Confirm Password</label>
+										<label>{{__(trans('user.confirm_password'))}}</label>
 										<input type="password" name="password_confirmation" class="form-control">
 									</div>
-									<button class="btn btn-primary" type="submit">Save Changes</button>
+									<button class="btn btn-primary" type="submit">{{__(trans('user.apply'))}}</button>
 								</form>
 							</div>
 						</div>

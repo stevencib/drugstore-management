@@ -23,4 +23,6 @@ return [
     'french' => 'Français',
     'english' => 'Anglais',
     'settings' => 'Paramètres',
+    'my_profile' => 'Mon Profil',
+    'logout' => 'Déconnexion',
 ];

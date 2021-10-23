@@ -80,10 +80,10 @@
 					</div>
 				</div>
 				
-				<a class="dropdown-item" href="{{route('profile')}}">My Profile</a>
-				@can('view-settings')<a class="dropdown-item" href="{{route('settings')}}">Settings</a>@endcan
+				<a class="dropdown-item opt" href="{{route('profile')}}">{{__(trans('sidebar.my_profile'))}}</a>
+				@can('view-settings')<a class="dropdown-item opt" href="{{route('settings')}}">{{__(trans('sidebar.settings'))}}</a>@endcan
 				
-				<a class="dropdown-item" href="{{route('logout')}}">Logout</a>
+				<a class="dropdown-item opt" href="{{route('logout')}}">{{__(trans('sidebar.logout'))}}</a>
 			</div>
 		</li>
 		<!-- /User Menu -->

@@ -1062,7 +1062,8 @@ button.bg-danger:hover {
 
 .dropdown-item.active,
 .dropdown-item:active {
-    background-color: #00d0f1;
+    /* background-color: #00d0f1; */
+    background-color: #4bb40e;
 }
 
 .navbar-nav .open .dropdown-menu {
@@ -1824,7 +1825,8 @@ button.bg-danger:hover {
 
 .user-menu .dropdown-menu .dropdown-item:hover {
     color: #fff;
-    background: #00d0f1;
+    /* background: #00d0f1; */
+    background: #1b903e;
 }
 
 .header .dropdown-menu>li>a:focus,

@@ -17,10 +17,12 @@ return [
     'permissions' => 'Permissions',
     'roles' => 'Roles',
     'users' => 'Users',
-    'profile' => 'Profile',
+    'profile' => ' Profile',
     'backups' => 'Backups',
     'language' => 'Language',
     'french' => 'French',
     'english' => 'English',
     'settings' => 'Settings',
+    'my_profile' => 'My Profile',
+    'logout' => 'Logout',
 ];

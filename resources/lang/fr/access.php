@@ -10,4 +10,9 @@ return [
     'save_changes' => 'Enregistrer',
     'edit_permission' => 'Modifier la permission',
     'appy' => 'Appliquer',
+
+    'add_role' => 'Ajouter un rôle',
+    'role' => 'Rôle',
+    'select_permissions' => 'Sélectionnez l\'autorisation',
+    'edit_role' => 'Modifier le Rôle',
 ];
